@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 
 @SpringBootApplication
 @Configuration
-public class EmaillabsMongodbApplication extends AbstractMongoClientConfiguration {
+public class MangoApplication extends AbstractMongoClientConfiguration {
 
 	@Value("${spring.data.mongodb.uri}")
 	private String uri;
@@ -16,13 +16,20 @@ public class EmaillabsMongodbApplication extends AbstractMongoClientConfiguratio
 	@Value("${spring.data.mongodb.database}")
 	private String db;
 
+	@Value("${emailabs.token}")
+	private String token;
+
 	public static void main(String[] args) {
-		SpringApplication.run(EmaillabsMongodbApplication.class, args);
+		SpringApplication.run(MangoApplication.class, args);
 	}
 
 	@Override
 	protected String getDatabaseName() {
 		return db;
+	}
+
+	public String getToken() {
+		return token;
 	}
 
 }

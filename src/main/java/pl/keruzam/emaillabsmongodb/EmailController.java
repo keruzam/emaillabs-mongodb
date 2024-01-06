@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pl.keruzam.emaillabsmongodb.model.EmailData;
+import pl.keruzam.emaillabsmongodb.repo.EmailRepository;
+
 @RestController
 @RequestMapping("/api/email")
 public class EmailController {
